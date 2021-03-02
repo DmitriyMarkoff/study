@@ -34,7 +34,6 @@ namespace solution1
     {
         static void Main(string[] args)
         {
-
             double arg1;
             double arg2;
             char oper;
@@ -46,16 +45,24 @@ namespace solution1
             oper = Convert.ToChar(Console.ReadLine());
             operation op = new operation { x = arg1, y = arg2 };
             op.Show();
-            if (oper == '+')
+            switch (oper)
             {
-                plus op1 = new plus { x = arg1, y = arg2, z = oper };
-                op1.Show();
+                case '+':
+                    {
+                        plus op1 = new plus { x = arg1, y = arg2, z = oper };
+                        op1.Show();
+                        break;
+                    }
+                case '-':
+                    {
+                        minus op2 = new minus { x = arg1, y = arg2, z = oper };
+                        op2.Show();
+                        break;
+                    }
+                default:
+                    { Console.Write("Ошибка ввода знака операции"); break; }
             }
-            else
-            {
-                minus op2 = new minus { x = arg1, y = arg2, z = oper };
-                op2.Show();
-            }
+
            Console.ReadKey();
         }
     }
