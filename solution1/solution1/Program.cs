@@ -42,11 +42,11 @@ namespace solution1
                         double arg1;
                         double arg2;
                         char oper;
-                        Console.Write("Задание 3.\nВВедите первый аргумент:");
+                        Console.Write("Задание 3.\nВведите первый аргумент:");
                         arg1 = Convert.ToDouble(Console.ReadLine());
-                        Console.Write("ВВедите второй аргумент:");
+                        Console.Write("Введите второй аргумент:");
                         arg2 = Convert.ToDouble(Console.ReadLine());
-                        Console.Write("ВВедите знак операции (-,+):");
+                        Console.Write("Введите знак операции (-,+):");
                         oper = Convert.ToChar(Console.ReadLine());
                         operation op = new operation { x = arg1, y = arg2 };
                         op.Show();
@@ -64,8 +64,14 @@ namespace solution1
                     }
                 case "6":
                     {
-                        Console.WriteLine("Задание 6.");
-                        //paragraph6();
+                        password pass1 = new password { };
+                        password pass2 = new password { };
+                        Console.Write("Задание 6.\nВведите цифровой пароль: ");
+                        pass1.symbols = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Введите символьный пароль: ");
+                        pass2.symbols = Convert.ToString (Console.ReadLine());
+                        Console.WriteLine("Ваш цифровой пароль увеличен на 1: "+((int)pass1.symbols+1));
+                        Console.WriteLine("К Вашему символьному паролю добавлен символ: "+(string)pass2.symbols+"1");
                         break;
                     }
                 case "7":
