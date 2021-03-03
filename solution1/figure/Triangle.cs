@@ -14,7 +14,6 @@ namespace figure
                 SideA = a;
                 SideB = b;
                 SideC = c;
-
             }
             else
                 throw new ArgumentException("Ошибка ввода данных!");
