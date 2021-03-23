@@ -5,36 +5,29 @@ using System.Text;
 
 namespace Figure
 {
-    class Triangle : Figure
+    class Circle : Figure
     {
-        public Triangle(double a, double b, double c)
+        public Circle(double r)
         {
-            Existence = true;
-            Name = "треугольник";
-            if (a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a)
+            Name = "круг      ";
+            if (r > 0)
             {
-                SideA = a;
-                SideB = b;
-                SideC = c;
+                Radius = r;
             }
             else
-            {
-                Existence = false; 
                 throw new ArgumentException("Ошибка ввода данных!");
-                //Console.WriteLine("Ошибка ввода данных");
-            }
         }
 
         public override double Square()
         {
-            double p = (SideA + SideB + SideC) / 2;
-            return Math.Sqrt(p * (p - SideA) * (p - SideB) * (p - SideC));
+            return Math.Pow(Radius, 2) * Math.PI;
         }
 
         public override double Perimeter()
         {
-            return SideA + SideB + SideC;
+            return 2 * Radius * Math.PI;
         }
+
 
         public void PrintInfo()
         {

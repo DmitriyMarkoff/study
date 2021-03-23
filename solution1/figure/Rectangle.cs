@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace figure
+namespace Figure
 {
     class Rectangle : Figure
     {
@@ -16,8 +16,12 @@ namespace figure
             }
             else
                 throw new ArgumentException("Ошибка ввода данных!");
+            if (Length == Width)
+                Name = "квадрат   ";
+            else
+                Name = "прямоугольник";
         }
-
+        
         public override double Square()
         {
             return this.Length * this.Width;
@@ -30,10 +34,7 @@ namespace figure
 
         public void PrintInfo()
         {
-            if (Length == Width)
-                Console.WriteLine("Фигура: квадрат");
-            else
-                Console.WriteLine("Фигура: прямоугольник");
+            Console.WriteLine("Фигура: {0}", Name);
             Console.WriteLine("Ширина: {0}", Width);
             Console.WriteLine("Длина: {0}", Length);
             Console.WriteLine("Площадь: {0}", Square());
