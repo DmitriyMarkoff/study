@@ -9,13 +9,17 @@ namespace EqualGetHashCodeClassLibrary
     {
         public void run()
         {
-            //string s1 = "строка1";
-            //string s2 = "строка1";
-            //string s3 = s1;
-            //var b1 = s1 == s2;
-            //var b2 = s1 == s3;
-            //Console.WriteLine("равенство s1 и s2: " + b1.ToString()); //непонятно
-            //Console.WriteLine("равенство s1 и s3: " + b2.ToString());
+            string s1 = "строка1";
+            string s2 = "строка1";
+            string s3 = s1;
+            var b1 = s1 == s2;
+            var b2 = s1 == s3;
+            var b3 = s1.Equals(s2);
+            var b4 = s1.Equals(s3);
+            Console.WriteLine("равенство s1 и s2: " + b1.ToString()); //непонятно
+            Console.WriteLine("равенство s1 и s3: " + b2.ToString());
+            Console.WriteLine("эквивалентность s1 и s2: " + b3.ToString());
+            Console.WriteLine("эквивалентность s1 и s3: " + b4.ToString());
 
             Person[] People = new Person[4];
             People[0] = new Person("Иванов", "2000.12.15", "Тирасполь", "123456");

@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace EqualGetHashCodeClassLibrary
+namespace Problem3
 {
-    public class Person
+    class Person
     {
         public string SurnameName { get; set; }
         //public DateTime DateOfBirth { get; set; }
@@ -18,13 +21,13 @@ namespace EqualGetHashCodeClassLibrary
             Passport = passport;
         }
 
-        //public override bool Equals1(object obj)    //как бы перегружаем метод Equals()
+        //public override bool Equals(object obj)    //как бы перегружаем метод Equals()
         public bool Equals1(object pers)
         {
             if (pers == null) throw new ArgumentNullException("Нельзя сравнивать с null.");
 
             try
-            {               
+            {
                 Person pers1 = pers as Person;
                 return this.SurnameName == pers1.SurnameName &&
                        this.DateOfBirth == pers1.DateOfBirth &&
@@ -40,9 +43,9 @@ namespace EqualGetHashCodeClassLibrary
         //public override int GetHashCode()     //как бы перегружаем метод GetHashCode()
         public int GetHashCode1()
         {
-            return SurnameName.GetHashCode() + DateOfBirth.GetHashCode() + PlaceOfBirth.GetHashCode() + Passport.GetHashCode();
+            return 12345678;
+            //return SurnameName.GetHashCode() + DateOfBirth.GetHashCode() + PlaceOfBirth.GetHashCode() + Passport.GetHashCode();
         }
 
-        
     }
 }

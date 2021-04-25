@@ -37,10 +37,12 @@ namespace Figure
                 Console.WriteLine("" + s.Name + "\t\t" + (s.Equilateral ? "да" : "нет") + "\t\t\t" + s.GreyColor);
                 exist = true;
             }
-            if (!exist) Console.Write("\nВ наборе нет фигур, начинающихся на эту букву");
+            if (!exist) Console.WriteLine("\nВ наборе нет фигур, начинающихся на эту букву");
 
             Console.WriteLine("\nПример использования GroupBy.");
-            var selectedFigures1 = quadrilateralsArray.GroupBy(h => h.Name).Select(g => new { Name = g.Key, Count = g.Count() }).OrderBy(h => h.Name);
+            var selectedFigures1 = quadrilateralsArray.GroupBy(h => h.Name)
+                                                      .Select(g => new { Name = g.Key, Count = g.Count() })
+                                                      .OrderBy(h => h.Name);
             foreach (var s in selectedFigures1)
             {
                 Console.WriteLine("" + s.Name + " count=" + s.Count);

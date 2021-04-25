@@ -6,7 +6,8 @@ using System.Text;
 
 namespace Figure
 {
-    public abstract class Figure 
+    public abstract class Figure : IComparable<Figure>
+
     {
         public string Name { get; set; }
         public double Length { get; set; }
@@ -19,5 +20,22 @@ namespace Figure
 
         public abstract double Square();
         public abstract double Perimeter();
+
+        public int CompareTo(Figure f)
+        {
+            Figure fig1 = f as Figure;
+            if (fig1 != null)
+                //return this.Square().CompareTo(fig1.Square());  //по возрастанию
+                return fig1.Square().CompareTo(this.Square());   //по убыванию
+            else
+                throw new Exception("Невозможно сравнить два объекта");
+
+            //if (this.Square() > f.Square())
+            //    return 1;
+            //if (this.Square() < f.Square())
+            //    return -1;
+            //else
+            //    return 0;
+        }
     }
  }

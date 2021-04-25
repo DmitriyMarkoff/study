@@ -6,19 +6,8 @@ using System.Text;
 
 namespace Figure
 {
-    public class DemoIComparable //: IComparable
+    public class DemoIComparable 
     {
-        //double perim { get; set; }
-        //public int CompareTo(object o)
-        //{
-        //    if (o == null) return 1;
-        //    Figure fig1 = o as Figure;
-        //    if (fig1 != null)
-        //        return this.perim.CompareTo(fig1.Perimeter());
-        //    else
-        //        throw new Exception("Невозможно сравнить два объекта");
-        
-        //}
         
         public void run()
         {
